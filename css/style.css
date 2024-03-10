@@ -1,0 +1,135 @@
+* {
+  box-sizing: border-box;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+body {
+  background-color: #070f2b;
+}
+header > h1 {
+  text-align: center;
+}
+/* .poppins-light {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.poppins-regular {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.poppins-semibold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+} */
+
+.main-container {
+  display: flex;
+}
+.container-item {
+  background-color: #1b1a55;
+
+  width: 100%;
+  /* border: 1px solid; */
+  padding: 24px;
+}
+.wrapper {
+  /* border: 1px solid red; */
+  background-color: #535c91;
+
+  padding: 10px;
+}
+.button {
+  border: none;
+  color: white;
+  padding: 10px 32px;
+  text-align: center;
+  text-decoration: none;
+  /* display: inline-block; */
+  font-size: 16px;
+  margin: 6px 8px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 10px;
+}
+.button:active {
+  transform: translateY(8px);
+}
+.button1 {
+  background-color: #01845f;
+  border: 3px solid #005b41;
+  margin-left: 19px;
+}
+.button1:hover {
+  background-color: #005b41;
+}
+.button2 {
+  background-color: #df0e0e;
+  border: 3px solid #860000;
+}
+.button2:hover {
+  background-color: #860000;
+}
+.button3 {
+  background-color: #2c74b3;
+  border: 3px solid #1b4b75;
+}
+.button3:hover {
+  background-color: #1b4b75;
+}
+.box-wrapper {
+  margin: 10px;
+  padding: 2px 10px;
+  /* border: 1px solid green; */
+}
+.box-wrapper > .input-gender {
+  margin-top: 10px;
+}
+.box-wrapper > .input-kg {
+  width: 100%;
+  padding: 9px 10px;
+  margin-top: 5px;
+  border-radius: 8px;
+  /* background-color: #2c74b3;
+  color: #bcd1e8; */
+}
+input {
+  color: #000;
+}
+.justify {
+  text-align: center;
+}
+.justify > h1 {
+  font-size: 40px;
+}
+.img-button {
+  display: inline-block;
+
+  height: auto; /* Tinggi disesuaikan dengan proporsi gambar */
+  max-width: 300px; /* Maksimum lebar tombol */
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  text-indent: -9999px; /* Menyembunyikan teks yang mungkin ditampilkan */
+  margin-right: 10px;
+}
+.img-playstore {
+  background-image: url(../images/google-play-badge.png);
+  width: 30%;
+  padding: 11px;
+}
+.img-appstore {
+  background-image: url(../images/app-store-png-logo-33116.png);
+  width: 25%;
+  padding: 14px;
+}
+.sosmed {
+  margin-right: 8px;
+}

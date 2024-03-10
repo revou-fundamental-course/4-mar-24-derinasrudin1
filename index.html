@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Title -->
+    <title>Kalkulator BMI</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Cookie&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+    <!-- HTML2PDF untuk menyimpan/download PDF -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
+      integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/bebc371065.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <!-- Judul -->
+    <header>
+      <h1>Kalkulator BMI</h1>
+    </header>
+    <!-- Main -->
+    <main>
+      <!-- Konten -->
+      <content class="main-container">
+        <!-- Konten Sebelah Kiri -->
+        <section class="container-item">
+          <h2>Kalkulator BMI</h2>
+          <p>
+            Berat Badan Ideal adalah impian semua orang. Tidak hanya memiliki tubuh yang menunjang penampilan, berat badan ideal juga menandakan kodisi tubuh yang sehat. Bagaimana denganmu?
+            <br />
+            Yuk, hitung sekarang dikalkulator BMI.
+          </p>
+          <!-- Form Input -->
+          <div class="wrapper">
+            <form id="myForm" action="">
+              <div class="box-wrapper">
+                <label>Jenis Kelamin</label> <br />
+                <div id="gender">
+                  <input class="input-gender" type="radio" name="gender" value="Laki-Laki" id="man" />
+                  <label for="man">Laki-Laki</label>
+                  <input type="radio" name="gender" value="Perempuan" id="female" />
+                  <label for="female">Perempuan</label> <br />
+                </div>
+              </div>
+              <div class="box-wrapper">
+                <label for="berat-badan">Usia (tahun)</label> <br />
+                <input type="number" class="input-kg" placeholder="Masukkan Usia" name="usia" id="usia" />
+              </div>
+              <div class="box-wrapper">
+                <label for="berat-badan">Berat Badan (kg)</label> <br />
+                <input type="number" class="input-kg" placeholder="Masukkan Berat Badan" name="berat-badan" id="berat-badan" />
+              </div>
+              <div class="box-wrapper">
+                <label for="berat-badan">Tinggi Badan (cm)</label> <br />
+                <input type="number" class="input-kg" placeholder="Masukkan Tinggi Badan" name="tinggi-badan" id="tinggi-badan" />
+              </div>
+            </form>
+            <!-- Tombol Hitung dan Reset -->
+            <button type="submit" class="button button1" id="hitung">Hitung BMI</button>
+            <button type="reset" value="Reset" class="button button2" id="resetButton">Reset</button>
+          </div>
+          <h2>Kegunaan fitur</h2>
+          <p>1. Menghitung Berat Badan</p>
+          <p>2. Menentukan Kategori Berat Badan Ideal atau Tidak</p>
+          <p>3. Mempersiapkan Program Penurunan Berat Badan</p>
+          <br />
+          <p>
+            Kalkulator ini hanya boleh digunakan oleh orang dewasa (wanita hamil atau menyusui tidak boleh mengandalkan pembacaan BMI ini) dan tidak ada tindakan yang harus diambil berdasarkan nilainya selain berkonsultasi dengan orang yang
+            memenuhi syarat seperti dokter.
+          </p>
+          <br />
+          <p>
+            Kalkulator akan memberi Anda gambaran tentang perbandingan berat badan Anda dengan nilai umum.Index Massa Tubuh atau BMI dihitung sebagai berat badan Anda (dalam kilogram) dibagi dengan kuadrat tinggi badan Anda (dalam meter)
+            atau BMI = Kg / m<sup>2</sup>.
+          </p>
+        </section>
+        <!-- Konten Sebelah Kanan -->
+        <section id="result" class="container-item">
+          <h2>Result</h2>
+          <!-- Konten ditampilkan dengan javascript -->
+          <div class="wrapper justify">
+            <p id="result-status"></p>
+            <h1 id="result-number">0</h1>
+            <p id="result-text"></p>
+            <!-- Tombol download as pdf use html2pdf -->
+            <button class="button button1" id="button-download" download>Download PDF</button>
+          </div>
+          <p id="result-ket-number"></p>
+          <p id="result-ket-text"></p>
+          <p id="result-ket-saran"></p>
+          <div class="justify">
+            <!-- Tombol Konsultasi dan Registrasi -->
+            <button class="button button3">Konsultasi Ahli Gizi Via Aplikasi</button>
+            <button class="button button1">Registrasi Online Ahli Gizi</button>
+          </div>
+          <p>BMI tidak sepenuhnya mewakili diagnosis seluruh dari kesehatan tubuh dan resiko penyakit seseorang. Anda perlu konsultasi lebih lanjut mengenai resiko dan kekhawatiran Anda terkait dengan berat badan Anda.</p>
+          <div class="wrapper justify">
+            <p id="result-penyakit"></p>
+            <div class="justify">
+              <!-- Tombol Konsultasi dan Registrasi -->
+              <button class="button button3">Konsultasi Dokter Via Aplikasi</button>
+              <button class="button button1">Registrasi Online Sekarang</button>
+            </div>
+          </div>
+          <div class="justify">
+            <!-- Tombol Download Aplikasi -->
+            <p>Download Aplikasi</p>
+            <a href="#" class="img-button img-playstore">Google</a>
+            <a href="#" class="img-button img-appstore">AppStore</a>
+          </div>
+        </section>
+      </content>
+    </main>
+    <!-- Footer -->
+    <footer class="justify">
+      <p>Copyright by Deri &copy; 2024. All right reserved</p>
+      <div class="sosmed">
+        <a href="https://github.com/derinasrudin1" class="sosmed"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/deri-nasrudin-727ab6173/" class="sosmed"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://www.instagram.com/derrideultimate/" class="sosmed"><i class="fa-brands fa-instagram"></i></a>
+        <a href="mailto:deri.nasrudin78@gmail.com" class="sosmed"><i class="fa-solid fa-envelope-open"></i></a>
+      </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
