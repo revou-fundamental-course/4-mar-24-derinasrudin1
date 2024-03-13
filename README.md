@@ -1,6 +1,6 @@
 # Kalkulator BMI Sederhana
 
-Kalkulator BMI (Body Mass Index) Sederhana ini dikembangkan sebagai bagian dari Tugas RevoU Fundamental. Aplikasi ini memungkinkan pengguna untuk menghitung BMI mereka dengan memasukkan jenis kelamin, umur, berat badan dan tinggi badan.
+Kalkulator BMI (Body Mass Index) Sederhana ini dikembangkan sebagai bagian dari Tugas RevoU Fundamental. Aplikasi ini memungkinkan pengguna untuk menghitung BMI mereka dengan memasukkan jenis kelamin, umur, berat badan dan tinggi badan. 
 
 # Apa Saja Fiturnya
 
@@ -9,6 +9,7 @@ Kalkulator BMI (Body Mass Index) Sederhana ini dikembangkan sebagai bagian dari 
 - Menyediakan informasi tambahan tentang BMI dan risiko kesehatan.
 - UI yang menarik.
 - Download as PDF.
+- Web yang Responsive
 
 # Teknologi
 
@@ -25,6 +26,12 @@ Aplikasi ini dibangun dengan Teknologi :
 - Tekan tombol Hitung, maka akan tampil hasilnya di sebelah kanan.
 - Jika salah memasukkan data anda dapat menekan tombol reset disamping tombol hitung.
 - Jika tombol download ditekan maka akan mendownload hasil bmi dalam file pdf.
+
+# Interpretasi Hasil
+- Kurang dari 18.5: Kekurangan berat badan
+- 18.5 hingga 24.9: Berat badan normal atau ideal
+- 25.0 hingga 29.9: Kelebihan berat badan
+- 30.0 atau lebih: Obesitas
 
 # Clone repository
 
