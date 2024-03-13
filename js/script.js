@@ -25,11 +25,26 @@ hitung.addEventListener("click", () => {
   const gender = getGender("gender");
   const beratBadan = document.getElementById("berat-badan").value;
   const tinggiBadan = document.getElementById("tinggi-badan").value;
+  // Mengecek apakah ada data yang kosong
+  if (gender === "" || usia === "" || beratBadan === "" || tinggiBadan === "") {
+    alert("Data Tidak Boleh Kosong");
+    resultStatus.innerHTML = "Data Harus diisi";
+    return;
+  }
+  //Mengecek apakah user menginput angka minus/nol
+  if (beratBadan <= 0 || tinggiBadan <= 0 || usia <= 0) {
+    alert("Data Tidak Boleh Negatif/Nol");
+    return; // Menghentikan eksekusi lebih lanjut jika ada angka minus
+  }
+
+  // Jika tidak kosong, lanjutkan
   const bmi = beratBadan / (tinggiBadan / 100) ** 2;
   if (bmi < 18.5) {
     resultStatus.innerHTML = "Kekurangan Berat Badan";
     resultNumber.innerHTML = bmi.toFixed(2);
-    resultText.innerHTML = "Berat Badan Kamu Kurang ☹";
+    resultNumber.style.color = "red";
+    resultNumber.style.textShadow = "0.5px 0.5px 0px white, -0.5px -0.5px 0px white, 0.5px -0.5px 0px white, -0.5px 0.5px 0px white";
+    resultText.innerHTML = "Berat Badan Kamu Kurang ☹️";
     resultKetNumber.innerHTML = "Hasil BMI Kamu kurang dari 18.5";
     resultKetText.innerHTML = `Kamu seorang ${gender} dengan umur ${usia} Tahun, saat ini Kamu berada dalam kategori kekurangan berat badan. Kamu harus meningkatkan berat badan sebaik mungkin.`;
     resultKetSaran.innerHTML = "Salah satu kunci untuk menaikkan berat badan dengan cepat adalah surplus kalori, artinya asupan kalori harus lebih banyak daripada kebutuhan kalori sebenarnya.";
@@ -37,6 +52,8 @@ hitung.addEventListener("click", () => {
   } else if (bmi >= 18.5 && bmi <= 24.9) {
     resultStatus.innerHTML = "Berat Badan Normal (Ideal)";
     resultNumber.innerHTML = bmi.toFixed(2);
+    resultNumber.style.color = "green";
+    resultNumber.style.textShadow = "0.5px 0.5px 0px white, -0.5px -0.5px 0px white, 0.5px -0.5px 0px white, -0.5px 0.5px 0px white";
     resultText.innerHTML = "Berat Badan Kamu Normal atau Ideal 😊";
     resultKetNumber.innerHTML = "Hasil BMI Kamu berada diantara 18.5 dan 24.9";
     resultKetText.innerHTML = `Kamu seorang ${gender} dengan usia ${usia} Tahun, saat ini Kamu berada dalam kategori yang Ideal . Tetap jaga pola makan dan gaya hidup sehat.`;
@@ -45,6 +62,8 @@ hitung.addEventListener("click", () => {
   } else if (bmi >= 25.0 && bmi <= 29.9) {
     resultStatus.innerHTML = "Kelebihan Berat Badan";
     resultNumber.innerHTML = bmi.toFixed(2);
+    resultNumber.style.color = "red";
+    resultNumber.style.textShadow = "0.5px 0.5px 0px white, -0.5px -0.5px 0px white, 0.5px -0.5px 0px white, -0.5px 0.5px 0px white";
     resultText.innerHTML = "Kamu memiliki berat badan lebih 🙁";
     resultKetNumber.innerHTML = "Hasil BMI Kamu berada diantara 25.0 dan 29.9";
     resultKetText.innerHTML = `Kamu seorang ${gender} dengan usia ${usia} Tahun, saat ini Kamu berada dalam kategori kelebihan  berat badan. Kamu dapat menurunkan berat badan agar Ideal`;
@@ -75,16 +94,26 @@ window.onload = function () {
   document.getElementById("button-download").addEventListener("click", () => {
     const downResult = this.document.getElementById("result");
 
-    // let opt = {
-    //   margin: 0,
-    //   filename: "bmi-file.pdf",
-    //   enableLinks: true,
-    //   image: { type: "png", quality: 0.98 },
-    //   html2canvas: { scale: 2 },
-    //   jsPDF: { unit: "in", format: "a4", orientation: "portrait" },
-    // };
-    // html2pdf().from(downResult).set(opt).save();
+    let opt = {
+      margin: [0, 0],
+      filename: "bmi-file.pdf",
+      enableLinks: true,
+      image: { type: "jpeg", quality: 0.98 },
+      html2canvas: { scale: 2 },
+      jsPDF: { unit: "in", format: "a4", orientation: "portrait" },
+    };
+    html2pdf().from(downResult).set(opt).save();
 
-    html2pdf().from(downResult).save();
+    // html2pdf().from(downResult).save();
   });
 };
+
+if (window.innerWidth <= 600) {
+  // Tambahkan event listener pada tombol
+  document.getElementById("hitung").addEventListener("click", function () {
+    // Scroll ke section target
+    document.getElementById("result").scrollIntoView({
+      behavior: "smooth",
+    });
+  });
+}

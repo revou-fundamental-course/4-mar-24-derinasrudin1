@@ -10,27 +10,12 @@ body {
 }
 header > h1 {
   text-align: center;
+  font-size: 20px;
 }
-/* .poppins-light {
-  font-family: "Poppins", sans-serif;
-  font-weight: 300;
-  font-style: normal;
-}
-
-.poppins-regular {
-  font-family: "Poppins", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.poppins-semibold {
-  font-family: "Poppins", sans-serif;
-  font-weight: 600;
-  font-style: normal;
-} */
 
 .main-container {
   display: flex;
+  flex: wrap;
 }
 .container-item {
   background-color: #1b1a55;
@@ -44,6 +29,13 @@ header > h1 {
   background-color: #535c91;
 
   padding: 10px;
+}
+input {
+  background-color: transparent; /* Membuat input transparan */
+  border: none; /* Menghapus border default */
+  border-bottom: 2px solid white; /* Menambahkan garis bawah */
+  outline: none; /* Menghilangkan garis ketika input diklik */
+  border-radius: 0px;
 }
 .button {
   border: none;
@@ -95,12 +87,9 @@ header > h1 {
   width: 100%;
   padding: 9px 10px;
   margin-top: 5px;
-  border-radius: 8px;
+  /* border-radius: 8px; */
   /* background-color: #2c74b3;
   color: #bcd1e8; */
-}
-input {
-  color: #000;
 }
 .justify {
   text-align: center;
@@ -132,4 +121,97 @@ input {
 }
 .sosmed {
   margin-right: 8px;
+}
+#result {
+  padding: 20px;
+}
+@media only screen and (max-width: 320px) {
+  .main-container {
+    display: block;
+  }
+  .input-gender {
+    display: block;
+  }
+  .container-item > h2 {
+    font-size: 16px;
+  }
+  .container-item > p {
+    font-size: 14px;
+  }
+  .tombol {
+    text-align: center;
+    margin-left: -10px;
+  }
+  .button1 {
+    width: 80%;
+  }
+  .button2 {
+    width: 80%;
+    margin-left: 20px;
+  }
+  .img-button {
+    width: 150px;
+  }
+  .img-appstore {
+    width: 145px;
+  }
+  footer > p {
+    font-size: 8px;
+  }
+}
+@media only screen and (min-width: 320px) {
+  .main-container {
+    display: block;
+  }
+  .container-item > h2 {
+    font-size: 18px;
+  }
+  .container-item > p {
+    font-size: 16px;
+  }
+  .tombol {
+    text-align: center;
+    margin-left: -10px;
+  }
+  .button1 {
+    width: 80%;
+  }
+  .button2 {
+    width: 80%;
+    margin-left: 20px;
+  }
+  .img-button {
+    width: 150px;
+  }
+  .img-appstore {
+    width: 145px;
+  }
+  footer > p {
+    font-size: 10px;
+  }
+}
+@media only screen and (min-width: 480px) {
+  .main-container {
+    display: flex;
+  }
+  .tombol {
+    text-align: center;
+    margin-left: -10px;
+  }
+  .button1 {
+    width: 80%;
+  }
+  .button2 {
+    width: 80%;
+    margin-left: 20px;
+  }
+  .img-button {
+    width: 150px;
+  }
+  .img-appstore {
+    width: 145px;
+  }
+  footer > p {
+    font-size: 12px;
+  }
 }

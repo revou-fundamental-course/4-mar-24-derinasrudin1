@@ -32,7 +32,7 @@
       <content class="main-container">
         <!-- Konten Sebelah Kiri -->
         <section class="container-item">
-          <h2>Kalkulator BMI</h2>
+          <h2>Berapa BMI Kamu?</h2>
           <p>
             Berat Badan Ideal adalah impian semua orang. Tidak hanya memiliki tubuh yang menunjang penampilan, berat badan ideal juga menandakan kodisi tubuh yang sehat. Bagaimana denganmu?
             <br />
@@ -44,28 +44,34 @@
               <div class="box-wrapper">
                 <label>Jenis Kelamin</label> <br />
                 <div id="gender">
-                  <input class="input-gender" type="radio" name="gender" value="Laki-Laki" id="man" />
-                  <label for="man">Laki-Laki</label>
-                  <input type="radio" name="gender" value="Perempuan" id="female" />
-                  <label for="female">Perempuan</label> <br />
+                  <div class="input-gender">
+                    <input type="radio" name="gender" value="Laki-Laki" id="man" />
+                    <label for="man">Laki-Laki</label>
+                  </div>
+                  <div class="input-gender">
+                    <input type="radio" name="gender" value="Perempuan" id="female" />
+                    <label for="female">Perempuan</label> <br />
+                  </div>
                 </div>
               </div>
               <div class="box-wrapper">
                 <label for="berat-badan">Usia (tahun)</label> <br />
-                <input type="number" class="input-kg" placeholder="Masukkan Usia" name="usia" id="usia" />
+                <input type="number" required class="input-kg" placeholder="Masukkan Usia" name="usia" id="usia" />
               </div>
               <div class="box-wrapper">
                 <label for="berat-badan">Berat Badan (kg)</label> <br />
-                <input type="number" class="input-kg" placeholder="Masukkan Berat Badan" name="berat-badan" id="berat-badan" />
+                <input type="number" required class="input-kg" placeholder="Masukkan Berat Badan" name="berat-badan" id="berat-badan" />
               </div>
               <div class="box-wrapper">
                 <label for="berat-badan">Tinggi Badan (cm)</label> <br />
-                <input type="number" class="input-kg" placeholder="Masukkan Tinggi Badan" name="tinggi-badan" id="tinggi-badan" />
+                <input type="number" required class="input-kg" placeholder="Masukkan Tinggi Badan" name="tinggi-badan" id="tinggi-badan" />
               </div>
             </form>
             <!-- Tombol Hitung dan Reset -->
-            <button type="submit" class="button button1" id="hitung">Hitung BMI</button>
-            <button type="reset" value="Reset" class="button button2" id="resetButton">Reset</button>
+            <div class="tombol">
+              <button type="submit" class="button button1" id="hitung">Hitung BMI</button>
+              <button type="reset" value="Reset" class="button button2" id="resetButton">Reset</button>
+            </div>
           </div>
           <h2>Kegunaan fitur</h2>
           <p>1. Menghitung Berat Badan</p>
@@ -104,6 +110,7 @@
           <p>BMI tidak sepenuhnya mewakili diagnosis seluruh dari kesehatan tubuh dan resiko penyakit seseorang. Anda perlu konsultasi lebih lanjut mengenai resiko dan kekhawatiran Anda terkait dengan berat badan Anda.</p>
           <div class="wrapper justify">
             <p id="result-penyakit"></p>
+
             <div class="justify">
               <!-- Tombol Konsultasi dan Registrasi -->
               <button class="button button3">Konsultasi Dokter Via Aplikasi</button>
