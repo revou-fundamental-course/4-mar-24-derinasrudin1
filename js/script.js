@@ -36,14 +36,18 @@ hitung.addEventListener("click", () => {
     alert("Data Tidak Boleh Negatif/Nol");
     return; // Menghentikan eksekusi lebih lanjut jika ada angka minus
   }
+  // Scroll ke section target
+  document.getElementById("result").scrollIntoView({
+    behavior: "smooth",
+  });
 
   // Jika tidak kosong, lanjutkan
   const bmi = beratBadan / (tinggiBadan / 100) ** 2;
   if (bmi < 18.5) {
     resultStatus.innerHTML = "Kekurangan Berat Badan";
     resultNumber.innerHTML = bmi.toFixed(2);
-    resultNumber.style.color = "red";
-    resultNumber.style.textShadow = "0.5px 0.5px 0px white, -0.5px -0.5px 0px white, 0.5px -0.5px 0px white, -0.5px 0.5px 0px white";
+    resultNumber.style.color = "#f10000";
+    // resultNumber.style.textShadow = "0.5px 0.5px 0px white, -0.5px -0.5px 0px white, 0.5px -0.5px 0px white, -0.5px 0.5px 0px white";
     resultText.innerHTML = "Berat Badan Kamu Kurang ☹️";
     resultKetNumber.innerHTML = "Hasil BMI Kamu kurang dari 18.5";
     resultKetText.innerHTML = `Kamu seorang ${gender} dengan umur ${usia} Tahun, saat ini Kamu berada dalam kategori kekurangan berat badan. Kamu harus meningkatkan berat badan sebaik mungkin.`;
@@ -52,8 +56,8 @@ hitung.addEventListener("click", () => {
   } else if (bmi >= 18.5 && bmi <= 24.9) {
     resultStatus.innerHTML = "Berat Badan Normal (Ideal)";
     resultNumber.innerHTML = bmi.toFixed(2);
-    resultNumber.style.color = "green";
-    resultNumber.style.textShadow = "0.5px 0.5px 0px white, -0.5px -0.5px 0px white, 0.5px -0.5px 0px white, -0.5px 0.5px 0px white";
+    resultNumber.style.color = "#21dc2a";
+
     resultText.innerHTML = "Berat Badan Kamu Normal atau Ideal 😊";
     resultKetNumber.innerHTML = "Hasil BMI Kamu berada diantara 18.5 dan 24.9";
     resultKetText.innerHTML = `Kamu seorang ${gender} dengan usia ${usia} Tahun, saat ini Kamu berada dalam kategori yang Ideal . Tetap jaga pola makan dan gaya hidup sehat.`;
@@ -62,8 +66,8 @@ hitung.addEventListener("click", () => {
   } else if (bmi >= 25.0 && bmi <= 29.9) {
     resultStatus.innerHTML = "Kelebihan Berat Badan";
     resultNumber.innerHTML = bmi.toFixed(2);
-    resultNumber.style.color = "red";
-    resultNumber.style.textShadow = "0.5px 0.5px 0px white, -0.5px -0.5px 0px white, 0.5px -0.5px 0px white, -0.5px 0.5px 0px white";
+    resultNumber.style.color = "#f10000";
+    // resultNumber.style.textShadow = "0.5px 0.5px 0px white, -0.5px -0.5px 0px white, 0.5px -0.5px 0px white, -0.5px 0.5px 0px white";
     resultText.innerHTML = "Kamu memiliki berat badan lebih 🙁";
     resultKetNumber.innerHTML = "Hasil BMI Kamu berada diantara 25.0 dan 29.9";
     resultKetText.innerHTML = `Kamu seorang ${gender} dengan usia ${usia} Tahun, saat ini Kamu berada dalam kategori kelebihan  berat badan. Kamu dapat menurunkan berat badan agar Ideal`;
@@ -72,6 +76,7 @@ hitung.addEventListener("click", () => {
   } else if (bmi >= 30.0) {
     resultStatus.innerHTML = "Kegemukan (Obesitas)";
     resultNumber.innerHTML = bmi.toFixed(2);
+    resultNumber.style.color = "#9e0606";
     resultText.innerHTML = "Kamu memiliki berat badan sangat besar 😭";
     resultKetNumber.innerHTML = "Hasil BMI Kamu berada diatas 30.0";
     resultKetText.innerHTML = `Kamu seorang ${gender} dengan usia ${usia} Tahun, saat ini Kamu berada dalam kategori Kegemukan / Obesitas . Kamu harus segera menurunkan berat badan.`;
@@ -108,12 +113,12 @@ window.onload = function () {
   });
 };
 
-if (window.innerWidth <= 600) {
-  // Tambahkan event listener pada tombol
-  document.getElementById("hitung").addEventListener("click", function () {
-    // Scroll ke section target
-    document.getElementById("result").scrollIntoView({
-      behavior: "smooth",
-    });
-  });
-}
+// if (window.innerWidth <= 600) {
+//   // Tambahkan event listener pada tombol
+//   document.getElementById("hitung").addEventListener("click", function () {
+//     // Scroll ke section target
+//     document.getElementById("result").scrollIntoView({
+//       behavior: "smooth",
+//     });
+//   });
+// }
