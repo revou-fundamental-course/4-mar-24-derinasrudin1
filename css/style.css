@@ -27,14 +27,15 @@ header > h1 {
 .wrapper {
   /* border: 1px solid red; */
   background-color: #535c91;
+  border-radius: 15px;
 
   padding: 10px;
 }
 input {
-  background-color: transparent; /* Membuat input transparan */
-  border: none; /* Menghapus border default */
-  border-bottom: 2px solid white; /* Menambahkan garis bawah */
-  outline: none; /* Menghilangkan garis ketika input diklik */
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid white;
+  outline: none;
   border-radius: 0px;
 }
 .button {
